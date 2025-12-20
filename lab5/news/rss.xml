@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Последние новости</title>
+    <link>http://f1203326.xsph.ru/Lab5/news/news.php</link>
+    <item>
+      <title>sos</title>
+      <link>http://f1203326.xsph.ru/Lab5/news/news.php?id=7</link>
+      <description><![CDATA[soso]]></description>
+      <pubDate>Sat, 12 Dec 2025 04:15:31 +0300</pubDate>
+      <category>Политика</category>
+    </item>
+  </channel>
+</rss>
