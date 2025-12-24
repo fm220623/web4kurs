@@ -29,3 +29,9 @@ echo "<br>";
 // Создание суперпользователя
 $superUser = new SuperUser("Админ", "admin", "root", "Administrator");
 $superUser->showInfo();
+$superUser2 = new SuperUser("Иван", "ivan123", "pass123", "Administrator");
+$superUser2->showInfo();
+
+// Вывод количества созданных объектов
+echo "<br>Всего обычных пользователей: " . User::$counter . "<br>";
+echo "Всего супер-пользователей: " . SuperUser::$counter . "<br>";

@@ -11,12 +11,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if (isset($_GET['delete'])) {
     require_once 'delete_news.inc.php';
 }
+
+// Получаем категории через новый метод
+$categories = $news->getCategories();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Новостная лента</title>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
 </head>
 <body>
     <h1>Последние новости</h1>
@@ -32,7 +35,7 @@ if (isset($_GET['delete'])) {
         Выберите категорию:<br>
         <select name="category">
             <?php
-            foreach ($news as $id => $category)
+            foreach ($categories as $id => $category)
             {
                 echo '<option value="' . htmlspecialchars($id) . '">' . htmlspecialchars($category) . '</option>';
             }

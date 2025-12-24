@@ -1,7 +1,7 @@
 <?php
-namespace Mvc\Views;
+namespace MVC\Views;
 
-class MarkdownView
+class MarkdownView extends ViewFactory
 {
     private array $users;
 

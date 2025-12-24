@@ -201,5 +201,15 @@ class NewsDB implements INewsDB {
         $dom->save(self::RSS_NAME);
         return true;
     }
+
+    public function getCategories() {
+        try {
+            $stmt = $this->_db->query("SELECT id, name FROM category ORDER BY id");
+            return $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+        } catch (PDOException $e) {
+            error_log("Ошибка получения категорий: " . $e->getMessage());
+            return [];
+        }
+    }
 }
 ?>

@@ -34,15 +34,9 @@ if ($uri == '' || $uri == '/lab8') {
     $uri = '/';
 }
 
-// Отладка + инфа
-echo "<!-- Debug: Original URI = " . $_SERVER['REQUEST_URI'] . " -->\n";
-echo "<!-- Debug: Cleaned URI = $uri -->\n";
-
 $routes = require $_SERVER['DOCUMENT_ROOT'] . '/lab8/project/config/routes.php';
 
 $track = ( new Router )->getTrack($routes, $uri);
-
-echo "<!-- Debug: Track = " . $track->controller . "::" . $track->action . "() -->\n";
 
 $page  = ( new Dispatcher )->getPage($track);
 

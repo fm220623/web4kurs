@@ -11,6 +11,10 @@ class User
     public string $name;
     public string $login;
     private string $password;
+    protected bool $isSuperUser = false; 
+    
+    // Статическое свойство для подсчета
+    public static int $counter = 0;
 
     /**
      * Конструктор класса User.
@@ -23,6 +27,19 @@ class User
         $this->name = $name;
         $this->login = $login;
         $this->password = $password;
+        
+        // Увеличиваем счетчик только если это НЕ SuperUser
+        if (!$this->isSuperUser) {
+            self::$counter++;
+        }
+    }
+
+    /**
+     * Метод для отметки пользователя как SuperUser
+     */
+    protected function markAsSuperUser(): void
+    {
+        $this->isSuperUser = true;
     }
 
     /**

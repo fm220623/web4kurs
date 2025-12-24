@@ -1,7 +1,6 @@
 <?php
 declare(strict_types=1);
 
-// Объявление класса User
 namespace Classes;
 
 // Регистрируем автозагрузчик для классов
@@ -16,17 +15,25 @@ spl_autoload_register(function ($class) {
     }
 });
 
-// Объявление класса SuperUser, который наследует User
-namespace Classes;
-
-class SuperUser extends User
+class SuperUser extends User implements SuperUserInterface
 {
     public string $role;
+    
+    // Статическое свойство для подсчета экземпляров SuperUser
+    public static int $counter = 0;
 
     public function __construct(string $name, string $login, string $password, string $role)
     {
+        // Сначала отмечаем как SuperUser
+        $this->markAsSuperUser();
+        
+        // Затем вызываем родительский конструктор
         parent::__construct($name, $login, $password);
+        
         $this->role = $role;
+        
+        // Увеличиваем счетчик SuperUser
+        self::$counter++;
     }
 
     public function showInfo(): void
@@ -34,8 +41,9 @@ class SuperUser extends User
         parent::showInfo();
         echo "Роль: {$this->role}<br>";
     }
-}
 
-// Использование классов
-$superUser = new SuperUser('Иван', 'ivan123', 'pass123', 'Администратор');
-$superUser->showInfo();
+    public function getInfo(): string
+    {
+        return "SuperUser: {$this->name}, Role: {$this->role}";
+    }
+}

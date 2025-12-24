@@ -1,13 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
     <title>Последние новости</title>
-    <link>http://f1203326.xsph.ru/Lab5/news/news.php</link>
+    <link>http://f1203326.xsph.ru/lab5/news/news.php</link>
+    <item>
+      <title>ывсавапы</title>
+      <link>http://f1203326.xsph.ru/lab5/news/news.php?view=8</link>
+      <description><![CDATA[авпавп]]></description>
+      <pubDate>Wed, 24 Dec 2025 13:32:06 +0300</pubDate>
+      <category>Культура</category>
+    </item>
     <item>
       <title>sos</title>
-      <link>http://f1203326.xsph.ru/Lab5/news/news.php?id=7</link>
+      <link>http://f1203326.xsph.ru/lab5/news/news.php?view=7</link>
       <description><![CDATA[soso]]></description>
-      <pubDate>Sat, 12 Dec 2025 04:15:31 +0300</pubDate>
+      <pubDate>Sat, 20 Dec 2025 12:15:31 +0300</pubDate>
       <category>Политика</category>
     </item>
   </channel>
